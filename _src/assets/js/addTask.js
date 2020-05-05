@@ -4,27 +4,26 @@
 const listContainer = document.querySelectorAll('.app-list')// contenedor del formulario//
 
 listContainer.forEach(list => {
-    //const formList = list.querySelector('.app-list-form');//formulario//
-    //const input = document.querySelector('.app-list-input');//input//
-    const contenedorArticles = list.querySelector('div.p-1');
+    const contenedorArticles = list.querySelector('.p-1.rounded-sm.bg-primary.shadow');
     const buttonAddTask = list.querySelector('.ml-1.btn.btn-primary.btn-sm.text-white-50')//boton//
-    buttonAddTask.addEventListener('click', () => {
-        console.log('Añado un nuevo article');
-        console.log(contenedorArticles);
-    });
+    buttonAddTask.addEventListener('click', addNewCard(contenedorArticles,buttonAddTask))
+    
+
 });
 
+function addNewCard(contenedor,buttonAddTask){
+    return () => {
+        const newCard= document.createElement('article');
+        newCard.setAttribute('class','js-card app-card m-1 mb-2 p-2 bg-white rounded-sm app-cursor-pointer shadow-sm');
+        contenedor.appendChild(newCard);
+
+        contenedor.insertBefore(newCard,buttonAddTask)
+    }
+}
 
 
-/*function addIdButton(){
-if(input.value==='Backlog'){
-    buttonAddTask.setAttribute('id','Backlog');
-}
-if(input.value==='Por hacer'){
-    buttonAddTask.setAttribute('id','toDo');
-}
-}
 
-addIdButton();*/
-    
+
+
+
 
