@@ -1,5 +1,6 @@
 'use-strict';
 
+import {moveUp, moveDown} from './moveTask.js';
 // obtener en cada momento el botón adecuado//
 const listContainer = document.querySelectorAll('.app-list')// contenedor del formulario//
 
@@ -7,8 +8,6 @@ listContainer.forEach(list => {
     const contenedorArticles = list.querySelector('.p-1.rounded-sm.bg-primary.shadow');
     const buttonAddTask = list.querySelector('.ml-1.btn.btn-primary.btn-sm.text-white-50')//boton//
     buttonAddTask.addEventListener('click', addNewCard(contenedorArticles, buttonAddTask))
-
-
 });
 
 function addNewCard(contenedor, buttonAddTask) {
@@ -63,6 +62,9 @@ function addNewCard(contenedor, buttonAddTask) {
         newCard.setAttribute('title', 'Abrir la tarjeta');
         buttonUp.appendChild(spanUp);
         buttonDown.appendChild(spanDown);
+
+        buttonUp.addEventListener('click', (event) => moveUp(newCard, event));
+        buttonDown.addEventListener('click', (event) => moveDown(newCard, event));
         containerButton.appendChild(buttonUp);
         containerButton.appendChild(buttonDown);
         subTaskContainer.appendChild(subTaskSmallOne);
