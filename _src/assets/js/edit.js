@@ -17,3 +17,5 @@ const preventEditClosing = ev => {
 };
 
 document.querySelector('.js-edit-modal').addEventListener('click', preventEditClosing);
+
+export{ toggleEdit }

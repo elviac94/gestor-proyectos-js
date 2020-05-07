@@ -1,6 +1,7 @@
 'use-strict';
 
 import {moveUp, moveDown} from './moveTask.js';
+import { toggleEdit } from './edit.js';
 // obtener en cada momento el botón adecuado//
 const listContainer = document.querySelectorAll('.app-list')// contenedor del formulario//
 
@@ -74,6 +75,7 @@ function addNewCard(contenedor, buttonAddTask) {
         newCard.appendChild(cardSpanContainer);// añado el div con los span//
         newCard.appendChild(cardSpanContainer);// añado el div con el title//
         newCard.appendChild(subTaskContainer);// div de las subtareas//
+        newCard.addEventListener('click', toggleEdit)
         contenedor.appendChild(newCard);
 
         contenedor.insertBefore(newCard, buttonAddTask)
