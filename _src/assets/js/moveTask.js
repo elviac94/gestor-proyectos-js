@@ -3,13 +3,17 @@
 const allTasks = document.querySelectorAll('.js-card.app-card.m-1.mb-2.p-2.bg-white.rounded-sm.app-cursor-pointer.shadow-sm');
 
 const moveUp = (card, event) => {
-    card.parentElement.insertBefore(card, card.previousElementSibling);
+    if(card.previousElementSibling.classList.contains('js-card')){
+        card.parentElement.insertBefore(card, card.previousElementSibling); 
+    }
     event.stopPropagation();
 }
 
 const moveDown = (card, event) => {
-    card.parentElement.insertBefore(card.nextElementSibling, card);
-    event.stopPropagation();
+    if(card.nextElementSibling.classList.contains('js-card')){
+        card.parentElement.insertBefore(card.nextElementSibling, card);   
+    }
+    event.stopPropagation();  
 }
 
 const moveTask = (card) => {
