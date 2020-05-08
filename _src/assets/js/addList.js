@@ -1,6 +1,7 @@
 'use-strict';
 
 import { moveListToLeft, moveListToRight } from './moveList.js'
+import { addNewCard } from './addTask.js'
 
 const menu = document.querySelector('.app-board')
 const listToAdd = document.querySelector('.app-list');
@@ -16,6 +17,8 @@ const addNewList = () => {
     const buttonRight = buttonsContainer.children[2];
     buttonLeft.addEventListener('click', () => moveListToLeft(newList));
     buttonRight.addEventListener('click', () => moveListToRight(newList));
+    const addCardButton = firstNewListChild.lastElementChild;
+    addCardButton.addEventListener('click', addNewCard(firstNewListChild, addCardButton));
     menu.insertBefore(newList, addListButton.parentElement);
 }
 

@@ -13,6 +13,7 @@ listContainer.forEach(list => {
 
 function addNewCard(contenedor, buttonAddTask) {
     return () => {
+        
         const newCard = document.createElement('article');
         const cardSpanContainer = document.createElement('div');
         const subTaskContainer = document.createElement('div');
@@ -76,11 +77,13 @@ function addNewCard(contenedor, buttonAddTask) {
         newCard.appendChild(cardSpanContainer);// añado el div con el title//
         newCard.appendChild(subTaskContainer);// div de las subtareas//
         newCard.addEventListener('click', toggleEdit)
-        contenedor.appendChild(newCard);
+        
 
         contenedor.insertBefore(newCard, buttonAddTask)
     }
 }
+
+export {addNewCard};
 
 
 
