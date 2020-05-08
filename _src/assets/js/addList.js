@@ -14,10 +14,9 @@ const addNewList = () => {
     const buttonsContainer = optionsContainer.children[1];
     const buttonLeft = buttonsContainer.children[1];
     const buttonRight = buttonsContainer.children[2];
-    buttonLeft.addEventListener('click',() =>moveListToLeft(newList));
-    buttonRight.addEventListener('click',()=> moveListToRight(newList));
+    buttonLeft.addEventListener('click', () => moveListToLeft(newList));
+    buttonRight.addEventListener('click', () => moveListToRight(newList));
     menu.insertBefore(newList, addListButton.parentElement);
-
 }
 
 
