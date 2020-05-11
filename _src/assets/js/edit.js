@@ -13,7 +13,13 @@ const addEditListeners = (element) => {
   element.querySelectorAll('.js-card, .js-edit-close').forEach(card => {
     card.addEventListener('click', toggleEdit);
   });
-  //element.querySelector('.js-edit-modal').addEventListener('click', preventEditClosing);
+  
 }
+const closeModal=()=>{
+  document.querySelector('.js-edit').classList.remove('show');
+}
+document.querySelector('.js-edit-modal').addEventListener('click', preventEditClosing);
+document.querySelector('.js-edit-close.close').addEventListener('click',closeModal)
+
 
 export{ toggleEdit, addEditListeners }
