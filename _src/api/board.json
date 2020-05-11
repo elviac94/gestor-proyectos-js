@@ -2,6 +2,22 @@
   "board": {
     "list": [
       {
+        "title":"Backlog",
+        "cards":[
+          {
+            "id":"cdscdscds1",
+            "title":"Publicar en GitHub Pages",
+            "description": "Lorem ipsum dolor sit amet",
+            "tags": [
+              "JS",
+              "Css",
+              "Html"
+            ]
+            
+          }
+        ]
+      },
+      {
         "title": "Por hacer",
         "cards": [
           {
@@ -25,6 +41,58 @@
             ]
           }
         ]
+      },
+      {
+        "title":"Haciendo",
+        "cards":[
+          {
+            "id":"cdshjnblds1",
+            "title":"Escuchar eventos",
+            "description": "Lorem ipsum dolor sit amet",
+            "tags": [
+              "JS",
+              "Css",
+              "Html"
+            ]
+            
+          }
+        ]
+      },
+      {
+        "title":"Hecho",
+        "cards":[
+          {
+            "id":"pqeqwhjnblds1",
+            "title":"Manipular datos",
+            "description": "Lorem ipsum dolor sit amet",
+            "tags": [
+              "JS",
+              "Css",
+              "Html"
+            ] 
+          },
+          {
+            "id":"aqwcvgh22j",
+            "title":"Guardar los datos en local storage",
+            "description": "Lorem ipsum dolor sit amet",
+            "tags": [
+              "JS",
+              "Css",
+              "Html"
+            ] 
+          },
+          {
+            "id":"ijrbcmh27j",
+            "title":"Obtener datos del API",
+            "description": "Lorem ipsum dolor sit amet",
+            "tags": [
+              "JS",
+              "Css",
+              "Html"
+            ] 
+          }
+        ]
+        
       }
     ]
   }

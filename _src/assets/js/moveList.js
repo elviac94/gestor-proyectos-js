@@ -1,6 +1,7 @@
 'use-strict';
-const tasksLists = document.querySelectorAll('.app-list');
+import { addNewCard } from './addTask.js'
 
+const tasksLists = document.querySelectorAll('.app-list');
 
 const moveListToLeft = (lista) => {
     if (lista.previousElementSibling.classList.contains('app-list')) {
@@ -12,6 +13,19 @@ const moveListToRight = (lista) => {
     if (lista.nextElementSibling.classList.contains('app-list')) {
         lista.parentElement.insertBefore(lista.nextElementSibling, lista);
     }
+}
+
+const addListListeners = (list) => {
+    const firstNewListChild = list.children[0];
+    const form = firstNewListChild.children[0];
+    const optionsContainer = form.children[1];
+    const buttonsContainer = optionsContainer.children[1];
+    const buttonLeft = buttonsContainer.children[1];
+    const buttonRight = buttonsContainer.children[2];
+    const addCardButton = firstNewListChild.lastElementChild;
+    buttonLeft.addEventListener('click', () => moveListToLeft(list));
+    buttonRight.addEventListener('click', () => moveListToRight(list));
+    addCardButton.addEventListener('click', addNewCard(firstNewListChild, addCardButton));
 }
 
 
@@ -28,4 +42,4 @@ tasksLists.forEach(taskList => {
     moveColumn(taskList);
 })
 
-export {moveListToLeft,moveListToRight};
+export {addListListeners as addMoveListListeners};

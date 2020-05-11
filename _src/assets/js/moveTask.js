@@ -1,7 +1,5 @@
 'use-strict';
 
-const allTasks = document.querySelectorAll('.js-card.app-card.m-1.mb-2.p-2.bg-white.rounded-sm.app-cursor-pointer.shadow-sm');
-
 const moveUp = (card, event) => {
     if(card.previousElementSibling.classList.contains('js-card')){
         card.parentElement.insertBefore(card, card.previousElementSibling); 
@@ -23,9 +21,4 @@ const moveTask = (card) => {
     buttonDown.addEventListener('click', (event) => moveDown(card, event));
 }
 
-allTasks.forEach(task => {
-    moveTask(task);
-});
-
-
-export { moveUp, moveDown };
+export { moveUp, moveDown, moveTask};
